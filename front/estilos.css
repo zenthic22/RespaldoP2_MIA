@@ -1,0 +1,511 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Quicksand;
+  }
+  
+  :root {
+  --primary-color: #FAEBD7;
+  --secondary-color: #000000;
+  --complimentary-color: #000000;
+  --contrast-color: #BDB76B;
+  --light-color: #f6a3c5;
+  }
+  
+  .title {
+    background-color: #000000;
+    text-align: center;
+  }
+
+  .container {
+    background: #191919;
+    min-height: 100vh;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  nav a {
+      font-size: 40px;
+      color: var(--contrast-color);
+      text-decoration: none;
+      padding: 20px;
+      text-align: center;
+  }
+  
+  nav {
+      position: fixed;
+      left: 0;
+      z-index: 50;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      height: 100vh;
+      background: var(--secondary-color);
+  }
+  
+  nav+svg{
+      transform: rotate(90deg) scaleY(0.4);
+      position: fixed;
+      left: -42%;
+      z-index: 49;
+  }
+  
+  section {
+      position: absolute;
+      top: 0;
+      height: 100vh;
+      width: 0;
+      opacity: 0;
+      transition: all ease-in .5s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  } 
+  
+  section h1 {
+      color: var(--contrast-color);
+      font-size: 50px;
+      text-transform: uppercase;
+      opacity: 0;
+  }
+  
+  /* Styles applied on trigger */
+  section:target {
+      opacity: 1;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+  }
+  
+  section:target h1 {
+      opacity: 0;
+      animation: 2s fadeIn forwards .5s;
+  }
+  
+  #first {
+    background:var(--primary-color);
+  }
+  #second {
+      background: var(--primary-color);
+      user-select: none;
+  }
+  
+  #third {
+      background: var(--primary-color);
+      user-select: none;
+      display: flex;
+  }
+  
+  @keyframes fadeIn {
+      100% { opacity:1 }
+  }
+  
+  .path-0{
+      animation:pathAnim-0 15s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+  }
+  
+  @keyframes pathAnim-0{
+      0%{
+        d: path("M 0,400 C 0,400 0,200 0,200 C 94.58373205741626,211.05263157894737 189.1674641148325,222.10526315789474 302,234 C 414.8325358851675,245.89473684210526 545.9138755980861,258.63157894736844 625,254 C 704.0861244019139,249.36842105263156 731.177033492823,227.3684210526316 822,202 C 912.822966507177,176.6315789473684 1067.377990430622,147.89473684210526 1181,147 C 1294.622009569378,146.10526315789474 1367.311004784689,173.05263157894737 1440,200 C 1440,200 1440,400 1440,400 Z");
+      }
+      25%{
+        d: path("M 0,400 C 0,400 0,200 0,200 C 124.6794258373206,218.01913875598086 249.3588516746412,236.03827751196172 333,220 C 416.6411483253588,203.96172248803828 459.2440191387559,153.866028708134 549,153 C 638.7559808612441,152.133971291866 775.665071770335,200.49760765550235 889,231 C 1002.334928229665,261.50239234449765 1092.0956937799042,274.14354066985646 1180,266 C 1267.9043062200958,257.85645933014354 1353.952153110048,228.92822966507177 1440,200 C 1440,200 1440,400 1440,400 Z");
+      }
+      50%{
+        d: path("M 0,400 C 0,400 0,200 0,200 C 82.95693779904306,212.64114832535887 165.91387559808612,225.2822966507177 256,228 C 346.0861244019139,230.7177033492823 443.3014354066986,223.51196172248802 551,204 C 658.6985645933014,184.48803827751198 776.8803827751196,152.66985645933016 878,161 C 979.1196172248804,169.33014354066984 1063.1770334928228,217.8086124401914 1154,231 C 1244.8229665071772,244.1913875598086 1342.4114832535886,222.0956937799043 1440,200 C 1440,200 1440,400 1440,400 Z");
+      }
+      75%{
+        d: path("M 0,400 C 0,400 0,200 0,200 C 116.43062200956936,218.19138755980862 232.86124401913872,236.3827751196172 310,234 C 387.1387559808613,231.6172248803828 424.9856459330143,208.66028708133976 524,213 C 623.0143540669857,217.33971291866024 783.1961722488037,248.9760765550239 897,254 C 1010.8038277511963,259.0239234449761 1078.2296650717703,237.4354066985646 1161,224 C 1243.7703349282297,210.5645933014354 1341.8851674641148,205.28229665071768 1440,200 C 1440,200 1440,400 1440,400 Z");
+      }
+      100%{
+        d: path("M 0,400 C 0,400 0,200 0,200 C 94.58373205741626,211.05263157894737 189.1674641148325,222.10526315789474 302,234 C 414.8325358851675,245.89473684210526 545.9138755980861,258.63157894736844 625,254 C 704.0861244019139,249.36842105263156 731.177033492823,227.3684210526316 822,202 C 912.822966507177,176.6315789473684 1067.377990430622,147.89473684210526 1181,147 C 1294.622009569378,146.10526315789474 1367.311004784689,173.05263157894737 1440,200 C 1440,200 1440,400 1440,400 Z");
+      }
+  }
+  
+  .editor {
+    display: flex;
+    overflow: auto;
+    gap: 10px;
+    font-family: monospace;
+    line-height: 21px;
+    background: var(--complimentary-color);
+    border-radius: 10px;
+    padding: 20px 10px;
+    margin-right: 65px;
+    height: 85vh;
+    width: 50%;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  }
+  
+  .line-numbers {
+    width: 20px;
+    text-align: right;
+  }
+  
+  .line-numbers span {
+    counter-increment:  linenumber;
+  }
+  
+  .line-numbers span::before {
+    content: counter(linenumber);
+    display: block;
+    color: var(--primary-color);
+  }
+  
+  textarea {
+    line-height: 21px;
+    padding: 0;
+    border: 0;
+    background: var(--complimentary-color);
+    color: #F0FFFF;
+    min-width: 95%;
+    max-width: 150%;
+    outline: none;
+    resize: none;
+  }
+  
+  .bg_page{
+    display: flex;
+    margin:20px;
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .fondo_folder{
+    align-items: center;
+    display: flex;
+    padding: 3.5vh;
+    width: 85vw;
+    height: 95vh;
+    border-radius: 15px;
+    z-index: 50;
+  }
+  
+  .botones{
+    width: 7vw;
+  }
+  
+  .boton{
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    width: 10vw;
+    height: 8vh;
+    margin-right: 1vw;
+    margin-left: 1vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 8vh;
+    font-family: inherit;
+    font-size:120%;
+    margin-bottom: 2vh;
+    user-select: none;
+  }
+  
+  .control{
+    transition: all 500ms ease-in-out;
+    border:1px solid var(--contrast-color);
+    color: var(--contrast-color);
+    overflow: hidden;
+    transform: scale(1);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px, rgba(0, 0, 0, 0.2) 0px 8px 6px;
+  }
+  
+  .control::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--contrast-color);
+    z-index: -50;
+    border-radius: 8vh;
+    transition: transform 400ms ease-in-out;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  
+  .control:hover::before{
+    transform: scaleX(1);
+  }
+  
+  .control:hover{
+    cursor:pointer;
+    color: var(--primary-color);
+    transform: scale(1);
+    border:none;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 19px 38px, rgba(0, 0, 0, 0.33) 0px 15px 12px;
+  }
+  
+  
+  .flex_vertical{
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  *::-webkit-scrollbar {
+    display: none;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 40px;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    border: 0px solid #ffffff;
+  }
+  
+  
+  .login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  
+  .login-box h1 {
+    margin: 0 0 30px;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .login-box .user-box {
+    position: relative;
+  }
+  
+  .login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  .login-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .login-box .user-box input:focus ~ label,
+  .login-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: var(--contrast-color);
+    font-size: 12px;
+  }
+  
+  .login-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: var(--contrast-color);
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+  }
+  
+  .login-box a:hover {
+    background: var(--contrast-color);
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px var(--contrast-color),
+                0 0 25px var(--contrast-color),
+                0 0 50px var(--contrast-color),
+                0 0 100px var(--contrast-color);
+  }
+  
+  .login-box a span {
+    position: absolute;
+    display: block;
+  }
+  
+  .login-box a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--contrast-color));
+    animation: btn-anim1 1s linear infinite;
+  }
+  
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+    50%,100% {
+      left: 100%;
+    }
+  }
+  
+  .login-box a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, var(--contrast-color));
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+  }
+  
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+    50%,100% {
+      top: 100%;
+    }
+  }
+  
+  .login-box a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, var(--contrast-color));
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+  }
+  
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+    50%,100% {
+      right: 100%;
+    }
+  }
+  
+  .login-box a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, var(--contrast-color));
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+  }
+  
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+    50%,100% {
+      bottom: 100%;
+    }
+  }
+  
+  
+  .izq{
+      margin-left: 4.3vw;
+      padding: 1%;
+      flex:1;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      gap: 2%;
+      overflow: auto;
+  }
+  
+  .der{
+      padding: 1%;
+      flex-direction: column;
+      display: flex;
+      flex:1;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .btn_rep{
+      border: solid var(--contrast-color) 3px ;
+      border-radius: 30vh;
+      background-color: rgba(0, 0, 0, 0);
+      color: var(--contrast-color);
+      font-size: 30px;
+      text-align: left;
+      padding-left: 5%;
+      transition: all 500ms;
+  }
+  
+  .btn_rep:hover{
+      cursor: pointer;
+  }
+  
+  .focus{
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      color: var(--primary-color);
+      background-color: var(--contrast-color);
+      transition: all 500ms;
+      transform: scale(1.02);
+  }
+  
+  .izq:has(.btn_rep.focus) .btn_rep:not(.btn_rep.focus){
+      transform: scale(0.9);
+  }
+  
+  #lienzo{
+    width: 95%;
+    height: 90%;
+    overflow: hidden;
+    background-color: var(--light-color);
+    border-radius: 15px;
+  }
+  
+  #logout{
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      border-radius: 50%;
+      color: var(--light-color);
+      font-size: 30px;
+      padding: 10px;
+      background-color: var(--secondary-color);
+      transition: all 300ms;
+      z-index: 90;
+  }
+  
+  #logout:hover{
+      transform: scale(1.1);
+      cursor: pointer;
+      color: var(--contrast-color);
+      background-color: var(--complimentary-color);
+      transition: all 300ms;
+  }
+  
+  .hidden{
+      display: None;
+  }
+  
+  #third .editor{
+      width: 90%;
+  }
